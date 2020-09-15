@@ -73,9 +73,9 @@ namespace muscshop.Controllers
             _storeContext.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Search(string parameter)
+        public ActionResult Search(string par)
         {
-            var albums = _storeContext.Albums.Where(x => x.Title.ToLower().Contains(parameter.ToLower()));
+            var albums = _storeContext.Albums.Where(x => x.Title.ToLower().Contains(par.ToLower()));
             return View("index", albums);
         }
     }
